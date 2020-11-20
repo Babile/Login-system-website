@@ -1,0 +1,38 @@
+#logo-pic {
+    width: 55px;
+    height: 35px;
+    animation-name: flip-logo-pic;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flip-logo-pic {
+    from {
+        transform: rotateY(360deg) 
+    }
+}
+
+#back_btn {
+    float: left;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+#buttumNavBar ul li a:hover {
+    color: #696969;
+}
+
+#buttumNavBar ul li a {
+    color: #909090;
+}
+
+#password_recovery_btn {
+    width: 100%;
+}
+
+[class*="col-"] {
+    padding: 1rem;
+}
