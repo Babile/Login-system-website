@@ -52,30 +52,60 @@
                     <!--form register-->
                     <button id="back_btn" class="btn btn-info btn-md" onclick="location.href='/index.php'"> <i class="fa fa-chevron-left"></i> Back</button>
                     <form id="register_form" action="/includes/db.register.php" method="POST">
-                        <h3 class="text-center text-info">Register</h3>
+                        <h3 class="text-center text-info">Register</h3><br>
                         <div class="form-group">
                             <label for="Name" class="text-info">Name:</label><br>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Example: John" autofocus required>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Example: John" autofocus required>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="Surname" class="text-info">Surname:</label><br>
-                            <input type="text" name="surname" id="surname" class="form-control" placeholder="Example: Doe" autofocus required>
+                            <label for="Surname" class="text-info">Surname:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="text" name="surname" id="surname" class="form-control" placeholder="Example: Doe" autofocus required>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="Username" class="text-info">Username:</label><br>
-                            <input type="text" name="username" id="username" class="form-control" aria-describedby="usernameHelp" placeholder="Example: JohnD1" pattern=".{5,}" required title="Username mast have more than 5 characters." autofocus required>
+                            <label for="Username" class="text-info">Username:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="text" name="username" id="username" class="form-control" aria-describedby="usernameHelp" placeholder="Example: JohnD1" pattern=".{5,}" required title="Username mast have more than 5 characters." autofocus required>
+                            </div>
                             <small id="usernameHelp" class="form-text text-muted">Username mast have more than 5 characters.</small>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="text-info">Email:</label><br>
-                            <input type="email" name="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Example: john.doe@gmail.com" autofocus required>
+                            <label for="email" class="text-info">Email:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="email" name="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Example: john.doe@gmail.com" autofocus required>
+                            </div>
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone.</small>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Type your password" autofocus required>
-                            <label for="Retype password" class="text-info">Retype password:</label><br>
-                            <input type="password" name="password_retype" id="password_retype" class="form-control" placeholder="Retype password" autofocus required>
+                            <label for="password" class="text-info">Password:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Type your password" autofocus required>
+                            </div>
+                            <label for="Retype password" class="text-info">Retype password:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="password" name="password_retype" id="password_retype" class="form-control" placeholder="Retype password" autofocus required>
+                            </div>
                         </div>
                         <button type="submit" name="register_btn" id="register_btn" class="btn btn-info btn-md">Register</button>
                     </form>

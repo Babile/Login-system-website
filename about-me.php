@@ -12,7 +12,6 @@
 <html>
     <head>
         <?php include("header.php"); ?>
-        <script defer src="/scripts/endless_runner_game.js"></script>
         <script defer src="/scripts/profile_list_script.js"></script>
         <link rel="stylesheet" type="text/css" href="/css/home_style.css">
     </head>
@@ -26,18 +25,18 @@
                     </button>
                     <div id="navBarResponsive" class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/home.php">Home<span class="sr-only">(current)</span></a>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About me</a>
+                                <a class="nav-link" href="/home.php">Home</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/about-me.php">About me<span class="sr-only">(current)</span></a>
                             </li>
                             <?php
                                 if(isset($_SESSION['Membership'])) {
                                     if($_SESSION['Membership'] == "Admin") {
                                         ?>
-                                            <li class="nav-item active">
-                                                <a class="nav-link" href="#">Members</a>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/members.php">Members</a>
                                             </li>
                                         <?php
                                     }
@@ -51,6 +50,10 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <!--Profile-->
                                 <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <label>Membership:</label>
+                                        <span class="badge badge-primary badge-pill"><?php echo $_SESSION['Membership']; ?></span>
+                                    </li>
                                      <li class="list-group-item d-flex justify-content-between align-items-center">
                                          <label>Name:</label>
                                          <span class="badge badge-primary badge-pill"><?php echo $_SESSION['Name']; ?></span>
@@ -76,12 +79,7 @@
             </nav>
         </header>  
         <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-5 mt-5">
-            <div class="col-sm-12 col-md-10 col-lg-8">
-                <h2 class="d-flex justify-content-center text-info">Hello <?php echo $_SESSION['Name']; ?>, let's play a game :)</h2>
-            </div>
-            <div id="gameScene" class="col-sm-12 col-md-10 col-lg-8">
-                <canvas id="game"></canvas>
-            </div>
+            <iframe id="cv-nemanja-babic" src="https://drive.google.com/file/d/1qWMEaK0ZSR3f2VrNQgf1Ai3gpmuMbFbR/preview" type="application/pdf"></iframe>
         </div>  
         <footer>
             <?php include("footer.php"); ?>

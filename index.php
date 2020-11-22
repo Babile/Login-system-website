@@ -98,21 +98,30 @@
                     <form id="login_form" action="/includes/db.login.php" method="POST">
                         <h3 class="text-center text-info display-4">Login</h3>
                         <div class="form-group">
-                            <label for="email_username" class="text-info">Email or Username:</label><br>
-                            <input type="text" name="email_username" id="email_username" class="form-control" autofocus required>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="text" name="email_username" id="email_username" class="form-control" autofocus required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" autofocus required>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="password" name="password" id="password" class="form-control" autofocus required>
+                            </div>
                         </div>
                         <div id="forgot_password_link" class="text-left">
                             <a href="/reset-password.php" class="text-info">Forgot password?</a>
                         </div>
                         <div class="form-group"><br>
                             <button type="submit" name="login_btn" id="login_btn" class="btn btn-info btn-md">Login</button>
-                        </div>
-                        <div id="register_link" class="text-right">
-                            <a href="/register.php" class="text-info">Register here</a>
+                            <div id="register_link" class="text-right">
+                                <a href="/register.php" class="text-info">Register here</a>
+                            </div>
                         </div>
                     </form>
                 </div>

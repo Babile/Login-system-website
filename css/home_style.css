@@ -4,3 +4,21 @@
     box-shadow: 0 30px 40px rgba(0,0,0,.5);
     border-radius: 10px;
 }
+
+#cv-nemanja-babic {
+    width: 100vw;
+    height: 90vh;
+    border: none;
+    position: absolute;
+}
+
+#table {
+    width: 100vw;
+}
+
+@media (max-width: 480px) {
+    .dropdown-menu {
+          height: 30vh;
+          overflow-y: auto;
+    }
+}

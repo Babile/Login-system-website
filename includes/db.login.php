@@ -23,12 +23,12 @@
             session_start();
 
 			if($whichOne === "username") {
-                $sqlQuery = "SELECT name, surname, username, email, password FROM users WHERE username = ?";
-                runQuery($db_connection, $stmt, $sqlQuery, $email_username);
+                $sqlQuery = "SELECT name, surname, username, email, password, membership  FROM users WHERE username = ? AND password = ?";
+                runQuery($db_connection, $stmt, $sqlQuery, $email_username, $password);
             }
             else if($whichOne === "email") {
-                $sqlQuery = "SELECT name, surname, username, email, password FROM users WHERE email = ?";
-                runQuery($db_connection, $stmt, $sqlQuery, $email_username);
+                $sqlQuery = "SELECT name, surname, username, email, password, membership  FROM users WHERE email = ? AND password = ?";
+                runQuery($db_connection, $stmt, $sqlQuery, $email_username, $password);
             }
 
             //Closing connection to database
@@ -43,14 +43,14 @@
 	}
 
     //This function run query and set sessions
-    function runQuery($db_connection, $stmt, $sqlQuery, $email_username) {
+    function runQuery($db_connection, $stmt, $sqlQuery, $email_username, $passwordInput) {
         if(!$stmt->prepare($sqlQuery)) {
             header("Location: /index.php?error=incorrectCredentials");
             $db_connection->close();
             exit();
         }
         else {
-            $stmt->bind_param('s', $email_username);
+            $stmt->bind_param('ss', $email_username, $passwordInput);
             $stmt->execute();
 
             $name = "";
@@ -58,8 +58,9 @@
             $email = "";
             $username = "";
             $password = "";
+            $membership = "";
 
-            $stmt->bind_result($name, $surname, $username, $email, $password);
+            $stmt->bind_result($name, $surname, $username, $email, $password, $membership);
             if(!$stmt->fetch()) {
                 header("Location: /index.php?error=incorrectCredentials");
                 $stmt->free_result();
@@ -72,6 +73,7 @@
                 $_SESSION['Email'] = $email;
                 $_SESSION['Name'] = $name;
                 $_SESSION['Surname'] = $surname;
+                $_SESSION['Membership'] = $membership;
                 header("Location: /home.php");
             }
         }

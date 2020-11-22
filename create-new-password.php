@@ -44,12 +44,22 @@
                                 <input type="hidden" name="selector" id="selector" value="<?php echo $selector ?>">
                                 <input type="hidden" name="validator" id="validator" value="<?php echo $validator ?>">
                                 <div class="form-group text-left">
-                                    <label for="password" class="text-info">Password:</label><br>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Type your new password" autofocus required>
+                                    <label for="password" class="text-info">Password:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                        </div>
+                                        <input type="password" name="password" id="password" class="form-control" placeholder="Type your new password" autofocus  autofocus required>
+                                    </div>
                                 </div>
                                 <div class="form-group text-left">
-                                    <label for="Retype password" class="text-info">Retype password:</label><br>
-                                    <input type="password" name="password_retype" id="password_retype" class="form-control" placeholder="Retype password" autofocus required>
+                                    <label for="Retype password" class="text-info">Retype password:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                        </div>
+                                        <input type="password" name="password_retype" id="password_retype" class="form-control" placeholder="Retype password" autofocus  autofocus required>
+                                    </div>
                                 </div>
                                 <div class="form-group text-left">
                                     <button type="submit" name="reset_password_btn" id="reset_password_btn" class="btn btn-info btn-md">Reset password</button>

@@ -34,8 +34,13 @@
                     <form id="password_recovery_form" action="/includes/site.reset-password-request.php" method="POST">
                         <h3 class="text-center text-info display-4">Reset your password</h3>
                         <div class="form-group">
-                            <label for="email" class="text-info">Enter your Email:</label><br>
-                            <input type="text" name="email" id="email" class="form-control" autofocus required>
+                            <label for="email" class="text-info">Enter your Email:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="text" name="email" id="email" class="form-control" autofocus required>
+                            </div>
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" name="password_recovery_btn" id="password_recovery_btn" class="btn btn-info btn-md">Send request</button>

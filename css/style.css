@@ -33,6 +33,14 @@ body {
     width: 100%;
 }
 
+#register_link {
+    float: right;
+}
+
+#drop-down-ico {
+    color: #fff;
+}
+
 [class*="col-"] {
     padding: 1rem;
 }
