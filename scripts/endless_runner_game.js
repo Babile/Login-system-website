@@ -151,6 +151,7 @@ function GameLoop() {
             gameSpeed = 2;
             gravity = 1;
             score = 0;
+            localStorage.setItem("highScoreStore", highScore);
             break;
         }
     }
@@ -164,6 +165,7 @@ function GameLoop() {
 
     if(highScore <= score){
         highScore = score;
+        localStorage.setItem("highScoreStore", highScore);
     }
 
     ctx.fillText("Score: " + score, 5, 22);
@@ -183,12 +185,18 @@ function GameDemo() {
    controler = new Controller();
 
    ctx.font = "10px Comic Sans MS";
-   player = new Player(5, 110, 40, 30, '#FF0000');
+   player = new Player(5, 110, 40, 30, '#ff0000');
    objects.push(player);
    gameSpeed = 2;
    gravity = 1;
    score = 0;
-   highScore = 0;
+   if(localStorage.getItem("highScore") === null) {
+       highScore = 0;
+   }
+   else {
+       highScore = parseInt(localStorage.getItem("highScoreStore"));
+   }
+
 
    requestAnimationFrame(GameLoop);
 }

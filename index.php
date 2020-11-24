@@ -73,6 +73,14 @@
                                     </div>
                                 </div>';
                         }
+                        else if ($_GET['error'] == 'failedToStoreScore'){
+                            echo '
+                                <div class="form-group text-center col-sm-12 col-md-7 col-lg-7 mt-3"> 
+                                    <div id="alert_msg" class="alert alert-danger text-center" role="alert">
+                                        <p>We failed to store highscore that you made.</p>
+                                    </div>
+                                </div>';
+                        }
                         else if ($_GET['error'] == 'fatalError'){
                             echo '
                                 <div class="form-group text-center col-sm-12 col-md-7 col-lg-7 mt-3"> 

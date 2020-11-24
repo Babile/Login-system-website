@@ -109,6 +109,8 @@
                         </div>
                         <button type="submit" name="register_btn" id="register_btn" class="btn btn-info btn-md">Register</button>
                     </form>
+                    <br>
+                    <p>Already have account? <a href="/index.php">Login</a></p>
                 </div>
             </div>   
         </div>

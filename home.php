@@ -14,6 +14,7 @@
         <?php include("header.php"); ?>
         <script defer src="/scripts/endless_runner_game.js"></script>
         <script defer src="/scripts/profile_list_script.js"></script>
+        <script defer src="/scripts/logout.js"></script>
         <link rel="stylesheet" type="text/css" href="/css/home_style.css">
     </head>
     <body>
@@ -67,7 +68,7 @@
                                          <label>Email:</label>
                                          <span class="badge badge-primary badge-pill"><?php echo $_SESSION['Email']; ?></span>
                                      </li>
-                                     <button id="logout_btn" class="btn btn-info btn-md" onclick="location.href='/includes/site.logout.php'">Logout</button>
+                                     <button id="logout_btn" class="btn btn-info btn-md" onclick="logout()">Logout</button>
                                   </ul>
                             </div>
                         </div>

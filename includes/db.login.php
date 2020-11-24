@@ -23,11 +23,11 @@
             session_start();
 
 			if($whichOne === "username") {
-                $sqlQuery = "SELECT name, surname, username, email, password, membership  FROM users WHERE username = ? AND password = ?";
+                $sqlQuery = "SELECT ID, name, surname, username, email, password, membership FROM users WHERE username = ? AND password = ?";
                 runQuery($db_connection, $stmt, $sqlQuery, $email_username, $password);
             }
             else if($whichOne === "email") {
-                $sqlQuery = "SELECT name, surname, username, email, password, membership  FROM users WHERE email = ? AND password = ?";
+                $sqlQuery = "SELECT ID, name, surname, username, email, password, membership FROM users WHERE email = ? AND password = ?";
                 runQuery($db_connection, $stmt, $sqlQuery, $email_username, $password);
             }
 
@@ -53,6 +53,7 @@
             $stmt->bind_param('ss', $email_username, $passwordInput);
             $stmt->execute();
 
+            $id = 0;
             $name = "";
             $surname = "";
             $email = "";
@@ -60,7 +61,7 @@
             $password = "";
             $membership = "";
 
-            $stmt->bind_result($name, $surname, $username, $email, $password, $membership);
+            $stmt->bind_result($id, $name, $surname, $username, $email, $password, $membership);
             if(!$stmt->fetch()) {
                 header("Location: /index.php?error=incorrectCredentials");
                 $stmt->free_result();
@@ -68,7 +69,8 @@
                 exit();
             }
             else {
-                $_SESSION['UserName'] = $surname;
+                $_SESSION['Id'] = $id;
+                $_SESSION['UserName'] = $username;
                 $_SESSION['Password'] = $password;
                 $_SESSION['Email'] = $email;
                 $_SESSION['Name'] = $name;
