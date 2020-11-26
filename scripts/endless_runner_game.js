@@ -165,7 +165,6 @@ function GameLoop() {
 
     if(highScore <= score){
         highScore = score;
-        localStorage.setItem("highScoreStore", highScore);
     }
 
     ctx.fillText("Score: " + score, 5, 22);

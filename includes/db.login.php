@@ -76,7 +76,7 @@
                 $_SESSION['Name'] = $name;
                 $_SESSION['Surname'] = $surname;
                 $_SESSION['Membership'] = $membership;
-                header("Location: /home.php");
+                header("Location: /includes/site.load-game-score.php");
             }
         }
     }
