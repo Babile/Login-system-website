@@ -80,34 +80,36 @@
             <div id="table" class="col-xs-12 col-sm-12 col-md-8 col-lg-6 table-responsive mt-3 w-auto">
                 <table class="table">
                     <thead class="thead-light">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Surname</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Username</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Surname</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Username</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Babile</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    <?php
+                        if(isset($_COOKIE['cookie_table'])) {
+                            $rows = json_decode($_COOKIE['cookie_table'], true);
+                            echo '<script>
+                                     console.log("'.$rows.'");
+                                  </script>';
+                            foreach($rows as $row => $link) {
+                                echo '
+                                        <tr>
+                                            <th scope="row">'.$link['ID'].'</th>
+                                            <td>'.$link['username'].'</td>
+                                            <td>'.$link['email'].'</td>
+                                            <td>'.$link['name'].'</td>
+                                            <td>'.$link['surname'].'</td>
+                                            <td>'.$link['membership'].'</td>
+                                        </tr>
+                                    ';
+
+                            }
+                        }
+                    ?>
                     </tbody>
                 </table>
             </div>

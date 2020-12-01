@@ -128,7 +128,7 @@
         
             sendEmail($userEmail, $subject, $emailBody, $header);
         }
-        catch(exception $e) {
+        catch(Exception $e) {
             header("Location: /index.php?error=fatalError&".$e->getMessage());
         }
     }

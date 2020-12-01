@@ -5,6 +5,9 @@
         require 'db.connection.php';
         global $db_connection;
 
+        //Remove cookie
+        unset($_COOKIE['cookie_table']);
+
         //Checking if user exist in database and getting his score
         $stmt = $db_connection->stmt_init();
         $sqlQuery = "SELECT score FROM player_score WHERE ID = ?";
@@ -85,7 +88,7 @@
             }
         }
     }
-    catch (exception $e) {
+    catch(Exception $e) {
         clear();
         header("Location: /index.php?error=failedToStoreScore".$e->getMessage());
     }

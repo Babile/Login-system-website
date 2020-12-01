@@ -89,7 +89,7 @@
 
             header("Location: /reset-password.php?message=passwordRequestSuccessful");
         }
-        catch(exception $e) {
+        catch(Exception $e) {
             header("Location: /reset-password.php?error=fatalError&".$e->getMessage());
 		}
     }

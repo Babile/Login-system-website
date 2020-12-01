@@ -45,7 +45,7 @@
              $stmt->free_result();
              $db_connection->close();
 		 }
-		 catch(exception $e) {
+		 catch(Exception $e) {
              header("Location: /index.php?error=incorrectCredentials".$e->getMessage());
 		 }
 	 }
