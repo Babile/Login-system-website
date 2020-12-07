@@ -77,7 +77,7 @@
                 </div>
             </nav>
         </header>  
-        <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-5 mt-5">
+        <div class="row justify-content-center mt-5 mb-5">
             <div class="col-sm-12 col-md-10 col-lg-8">
                 <h2 class="d-flex justify-content-center text-info">Hello <?php echo $_SESSION['Name']; ?>, let's play a game :)</h2>
             </div>

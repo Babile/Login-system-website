@@ -168,7 +168,7 @@ function GameLoop() {
     }
 
     ctx.fillText("Score: " + score, 5, 22);
-    ctx.fillText("High score: " + highScore, 220, 22);
+    ctx.fillText("High score: " + highScore, 215, 22);
 
     if(gameSpeed >= 38) {
         gameSpeed = gameSpeed;
@@ -189,13 +189,13 @@ function GameDemo() {
    gameSpeed = 2;
    gravity = 1;
    score = 0;
-   if(localStorage.getItem("highScore") === null) {
+
+   if(localStorage.getItem("highScoreStore") === null) {
        highScore = 0;
    }
    else {
        highScore = parseInt(localStorage.getItem("highScoreStore"));
    }
-
 
    requestAnimationFrame(GameLoop);
 }

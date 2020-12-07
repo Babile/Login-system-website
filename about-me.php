@@ -80,8 +80,62 @@
                 </div>
             </nav>
         </header>  
-        <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-5 mt-5">
-            <iframe id="cv-nemanja-babic" src="https://drive.google.com/file/d/1qWMEaK0ZSR3f2VrNQgf1Ai3gpmuMbFbR/preview" type="application/pdf"></iframe>
+        <div class="row justify-content-center mt-5 mb-5">
+            <div class="col-sm-12 col-md-10 col-lg-8 mt-5 text-center">
+                <img id="profile_picture" class="rounded-circle" src="/img/profile_picture.jpg" alt="profile_picture">
+            </div>
+            <div class="col-sm-12 col-md-10 col-lg-8 text-center">
+                <h3 class="text-info">Hello I'm Nemanja Babić</h3>
+                <h3 class="text-info">I'm 24 years old and final year student at <br>Electrical and Computer Engineering of Applied Studies in Belgrade <i>New computer technology department</i></h3>
+            </div>
+            <?php
+                if(isset($_GET['message'])) {
+                    if($_GET['message'] == 'successful') {
+                        echo '
+                            <div class="col-sm-12 col-md-8 col-lg-6 text-center">
+                                <div id="alert_msg" class="alert alert-success text-center" role="alert">
+                                    <p>Message was successfully sent.</p>
+                                </div>
+                            </div>
+                            <div class="w-100"></div>';
+                    }
+                }
+                else if(isset($_GET['error'])) {
+                    if($_GET['error'] == 'failedToSendEmail') {
+                        echo '
+                            <div class="col-sm-12 col-md-8 col-lg-6 text-center">
+                                <div id="alert_msg" class="alert alert-danger text-center" role="alert">
+                                    <p>Failed to send message. Try again.</p>
+                                </div>
+                            </div>
+                            <div class="w-100"></div>';
+                    }
+                }
+            ?>
+            <div class="col-sm-12 col-md-10 col-lg-8 mb-5 text-center">
+                <h3 class="text-info">Contact me</h3>
+                <form action="https://submit-form.com/your-form-id" target="_self" method="POST">
+                    <input type="hidden" name="_redirect" value="https://nemanjababic.000webhostapp.com/about-me.php?message=successful"/>
+                    <input type="hidden" name="_error" value="https://nemanjababic.000webhostapp.com/about-me.php?error=failedToSendEmail"/>
+                    <div class="form-group">
+                        <label for="name" class="text-info pull-left">Name:</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="text-info pull-left">Your Email:</label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="text-info pull-left">Subject:</label>
+                        <input type="text" name="subject" id="user-subject" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="text-info pull-left">Message:</label>
+                        <textarea id="message" name="-message" cols="30" rows="6" class="form-control" placeholder="Enter your Message"></textarea>
+                    </div>
+                    <button type="submit" name="sent_msg" class="btn btn-info btn-md"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Send</button>
+                </form>
+            </div>
         </div>  
         <footer>
             <?php include("footer.php"); ?>

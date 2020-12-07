@@ -52,6 +52,10 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <!--Profile-->
                                 <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <label>Membership:</label>
+                                        <span class="badge badge-primary badge-pill"><?php echo $_SESSION['Membership']; ?></span>
+                                    </li>
                                      <li class="list-group-item d-flex justify-content-between align-items-center">
                                          <label>Name:</label>
                                          <span class="badge badge-primary badge-pill"><?php echo $_SESSION['Name']; ?></span>
@@ -76,9 +80,9 @@
                 </div>
             </nav>
         </header>  
-        <div class="row justify-content-center mt-xl-5 mt-lg-5 mt-md-5 mt-5">
-            <div id="table" class="col-xs-12 col-sm-12 col-md-8 col-lg-6 table-responsive mt-3 w-auto">
-                <table class="table">
+        <div class="row justify-content-center mt-5 mb-5">
+            <div id="table" class="col-xs-12 col-sm-12 col-md-8 col-lg-10 table-responsive mt-3 w-auto">
+                <table class="table mb-5">
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">ID</th>
@@ -86,27 +90,24 @@
                             <th scope="col">Surname</th>
                             <th scope="col">Email</th>
                             <th scope="col">Username</th>
+                            <th scope="col">Registration date</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                        if(isset($_COOKIE['cookie_table'])) {
-                            $rows = json_decode($_COOKIE['cookie_table'], true);
-                            echo '<script>
-                                     console.log("'.$rows.'");
-                                  </script>';
-                            foreach($rows as $row => $link) {
+                        if(isset($_SESSION['ListUsers'])) {
+                            $rows = $_SESSION['ListUsers'];
+                            foreach($rows as $row) {
                                 echo '
-                                        <tr>
-                                            <th scope="row">'.$link['ID'].'</th>
-                                            <td>'.$link['username'].'</td>
-                                            <td>'.$link['email'].'</td>
-                                            <td>'.$link['name'].'</td>
-                                            <td>'.$link['surname'].'</td>
-                                            <td>'.$link['membership'].'</td>
-                                        </tr>
-                                    ';
-
+                                   <tr>
+                                       <th scope="row">'.$row['ID'].'</th>
+                                       <td>'.$row['username'].'</td>
+                                       <td>'.$row['email'].'</td>
+                                       <td>'.$row['name'].'</td>
+                                       <td>'.$row['surname'].'</td>
+                                       <td>'.$row['membership'].'</td>
+                                       <td>'.date('F j, Y,', strtotime($row['date'])).'</td>
+                                   </tr>';
                             }
                         }
                     ?>

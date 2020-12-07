@@ -5,15 +5,13 @@
     border-radius: 10px;
 }
 
-#cv-nemanja-babic {
-    width: 100vw;
-    height: 90vh;
-    border: none;
-    position: absolute;
-}
-
 #table {
     width: 100vw;
+}
+
+#profile_picture {
+    width: 250px;
+    height: 260px;
 }
 
 @media (max-width: 480px) {

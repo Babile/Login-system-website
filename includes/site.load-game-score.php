@@ -32,9 +32,9 @@
                 //>
                 $stmt->free_result();
                 $db_connection->close();
-                echo '<script> 
-                        localStorage.setItem("highScoreStore", '.$playerScore.') 
-                        location.href = "/home.php"; 
+                echo '<script>
+                        localStorage.setItem("highScoreStore", '.$playerScore.');
+                        location.href = "/home.php";
                      </script>';
                 exit();
             }
