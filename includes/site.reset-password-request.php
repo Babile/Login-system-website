@@ -16,16 +16,16 @@
 
             //Checking is email valid
             if(!filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
-                header("Location: /reset-password.php?error=emailIsNotValid");
+                header("Location: /reset-password.php?error=invalidEmail");
                 exit();
             }
 
             //Checking if user exist in database
-            $sqlQuery = "SELECT * FROM users WHERE email = ?";
+            $sqlQuery = "SELECT email FROM users WHERE email = ?";
             $stmt = $db_connection->stmt_init();
 
             if(!$stmt->prepare($sqlQuery)) {
-                header("Location: /index.php?error=emailIsNotValid");
+                header("Location: /index.php?error=invalidEmail");
                 $db_connection->close();
                 exit();
             }

@@ -39,7 +39,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" name="email" id="email" class="form-control" autofocus required>
+                                <input type="email" name="email" id="email" class="form-control" autofocus required>
                             </div>
                         </div>
                         <div class="form-group text-center">

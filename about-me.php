@@ -88,6 +88,47 @@
                 <h3 class="text-info">Hello I'm Nemanja Babić</h3>
                 <h3 class="text-info">I'm 24 years old and final year student at <br>Electrical and Computer Engineering of Applied Studies in Belgrade <i>New computer technology department</i></h3>
             </div>
+            <div class="col-sm-12 col-md-10 col-lg-8 text-center">
+                <h4 class="text-info">Technology used to create site</h4>
+                <div class="card-deck">
+                    <div class="card border-light mb-3">
+                        <img class="card-img-top card-picture" src="/img/HTML5.png" alt="html5">
+                        <div class="card-body">
+                            <h5 class="card-title">HTML5</h5>
+                        </div>
+                    </div>
+                    <div class="card border-light mb-3">
+                        <img class="card-img-top card-picture" src="/img/CSS3.png" alt="css3">
+                        <div class="card-body">
+                            <h5 class="card-title">CSS3</h5>
+                        </div>
+                    </div>
+                    <div class="card border-light mb-3">
+                        <img class="card-img-top card-picture" src="/img/JavaScript.png" alt="javascript">
+                        <div class="card-body">
+                            <h5 class="card-title">JavaScript</h5>
+                        </div>
+                    </div>
+                    <div class="card border-light mb-3">
+                        <img class="card-img-top card-picture" src="/img/Bootstrap.png" alt="bootstrap">
+                        <div class="card-body">
+                            <h5 class="card-title">Bootstrap 4</h5>
+                        </div>
+                    </div>
+                    <div class="card border-light mb-3">
+                        <img class="card-img-top card-picture" src="/img/PHP.png" alt="php">
+                        <div class="card-body">
+                            <h5 class="card-title">PHP</h5>
+                        </div>
+                    </div>
+                    <div class="card border-light mb-3">
+                        <img class="card-img-top card-picture" src="/img/MySQL.png" alt="mysql">
+                        <div class="card-body">
+                            <h5 class="card-title">MySQL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <?php
                 if(isset($_GET['message'])) {
                     if($_GET['message'] == 'successful') {
