@@ -12,7 +12,6 @@
 <html>
     <head>
         <?php include("header.php"); ?>
-        <script defer src="/scripts/loading_page.js"></script>
     </head>
     <body>
         <header>
