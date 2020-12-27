@@ -17,7 +17,6 @@
         <script defer src="/scripts/profile_list_script.js"></script>
         <script defer src="/scripts/logout_store_score.js"></script>
         <script defer src="/scripts/score_saver.js"></script>
-        <script src="/scripts/loading_page_fadein.js"></script>
     </head>
     <body>
         <header>
