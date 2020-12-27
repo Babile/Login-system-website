@@ -12,6 +12,7 @@
 <html>
     <head>
         <?php include("header.php"); ?>
+        <script defer src="/scripts/loading_page.js"></script>
     </head>
     <body>
         <header>
@@ -21,7 +22,7 @@
                 </div>
             </nav>
         </header>   
-        <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid mt-5 mb-5 content-page-load">
             <div class="row justify-content-center align-items-center">
                 <?php
                     if(isset($_GET['error'])) {
@@ -104,7 +105,8 @@
                 <div class="col-sm-12 col-md-8 col-lg-6">
                     <!--form login-->
                     <form id="login_form" action="/includes/db.login.php" method="POST">
-                        <h3 class="text-center text-info display-4">Login</h3>
+                        <p class="text-center text-info display-4">Login</p>
+                        <label for="email_username" class="text-info">Email or Username:</label>
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -126,7 +128,7 @@
                             <a href="/reset-password.php" class="text-info">Forgot password?</a>
                         </div>
                         <div class="form-group"><br>
-                            <button type="submit" name="login_btn" id="login_btn" class="btn btn-info btn-md">Login</button>
+                            <button type="submit" name="login_btn" id="login_btn" class="btn btn-info btn-md button_load">Login</button>
                             <div id="register_link" class="text-right">
                                 <a href="/register.php" class="text-info">Register here</a>
                             </div>

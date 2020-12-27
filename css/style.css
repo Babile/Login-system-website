@@ -7,18 +7,13 @@
 }
 
 @keyframes flip-logo-pic {
-    from {
-        transform: rotateY(360deg) 
+    from { 
+        transform: rotateY(360deg)
     }
 }
 
 #back_btn {
     float: left;
-}
-
-body {
-    overflow-x: hidden;
-    margin: 0;
 }
 
 #buttumNavBar ul li a:hover {
@@ -33,12 +28,34 @@ body {
     width: 100%;
 }
 
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
 #register_link {
     float: right;
 }
 
 #drop-down-ico {
     color: #fff;
+}
+
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{
+    display: none;
+}
+
+.content-page-load{
+     animation: fade 1.3s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 [class*="col-"] {

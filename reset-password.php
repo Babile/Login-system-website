@@ -7,7 +7,7 @@
 
     else if(isset($_GET['message'])) {
         if($_GET['message'] == 'passwordResetSuccessful') {
-            header("Refresh: 5; url=/index.php");
+            header("Refresh: 3; url=/index.php");
         }
     }
 ?>
@@ -27,12 +27,12 @@
                 </div>
             </nav>
         </header>
-        <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid mt-5 mb-5 content-page-load">
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-12 col-md-8 col-lg-6 mb-5">
                     <!--form password reset-->
                     <form id="password_recovery_form" action="/includes/site.reset-password-request.php" method="POST">
-                        <h3 class="text-center text-info display-4">Reset your password</h3>
+                        <p class="text-center text-info display-4">Reset your password</p>
                         <div class="form-group">
                             <label for="email" class="text-info">Enter your Email:</label>
                             <div class="input-group">

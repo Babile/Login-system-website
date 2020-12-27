@@ -17,17 +17,17 @@
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="/login.php"> <img id="logo-pic" alt="logo" src="/img/web_site_logo.png"> Nemanja Babić</a>
+                  <a class="navbar-brand" href="/index.php"> <img id="logo-pic" alt="logo" src="/img/web_site_logo.png"> Nemanja Babić</a>
                 </div> 
             </nav>
         </header>
-        <div class="container-fluid mt-xl-5 mt-lg-5 mt-md-5 mt-5">
+        <div class="container-fluid content-page-load">
           <div class="row justify-content-center mt-5 mb-5">
                 <?php 
                     if(isset($_GET['error'])) {
                         if($_GET['error'] == 'registrationFailed') {
                             echo '
-                                <div class="col-sm-12 col-md-8 col-lg-6 mt-xl-3 mt-lg-3 mt-md-3 mt-3">
+                                <div class="col-sm-12 col-md-8 col-lg-6 mt-3">
                                     <div id="alert_msg" class="alert alert-danger text-center" role="alert">
                                         <h5> <i class="fa fa-lightbulb-o fa-lg"></i> Tips </h5>
                                         <p>Check for misspelling mistakes and retype fields again. <br> Check your password if you typed two times right. Maybe Email or Username already exists or Username have less than 5 characters.</p>
@@ -39,7 +39,7 @@
                     else if(isset($_GET['message'])) {
                         if($_GET['message'] == 'registrationSuccessful') {
                             echo '
-                                <div class="col-sm-12 col-md-8 col-lg-6 mt-xl-3 mt-lg-3 mt-md-3 mt-3">
+                                <div class="col-sm-12 col-md-8 col-lg-6 mt-3">
                                     <div id="alert_msg" class="alert alert-success text-center" role="alert">
                                         <p>You were successfully registered. In 2 seconds you will be redirected to login page.</p>
                                     </div>
@@ -48,13 +48,12 @@
                         }
                     } 
                 ?>
-                <div class="col-sm-12 col-md-8 col-lg-6 mt-2 mb-5">
+                <div class="col-sm-12 col-md-8 col-lg-6 mb-5">
                     <!--form register-->
-                    <button id="back_btn" class="btn btn-info btn-md" onclick="location.href='/index.php'"> <i class="fa fa-chevron-left"></i> Back</button>
                     <form id="register_form" action="/includes/db.register.php" method="POST">
-                        <h3 class="text-center text-info">Register</h3><br>
+                        <p class="text-center text-info display-4">Register</p>
                         <div class="form-group">
-                            <label for="Name" class="text-info">Name:</label><br>
+                            <label for="name" class="text-info">Name:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
@@ -63,7 +62,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Surname" class="text-info">Surname:</label>
+                            <label for="surname" class="text-info">Surname:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
@@ -72,7 +71,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Username" class="text-info">Username:</label>
+                            <label for="username" class="text-info">Username:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
@@ -99,7 +98,7 @@
                                 </div>
                                 <input type="password" name="password" id="password" class="form-control" placeholder="Type your password" autofocus required>
                             </div>
-                            <label for="Retype password" class="text-info">Retype password:</label>
+                            <label for="password_retype" class="text-info">Retype password:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>

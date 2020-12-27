@@ -49,7 +49,7 @@
                             <button class="btn btn-info btn-md" data-toggle="dropdown" role="button" id="login_btn_dropdown_list">
                                 <label>Profile</label>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-right">
+                            <div id="dropdown-list" class="dropdown-menu dropdown-menu-right">
                                 <!--Profile-->
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -80,7 +80,7 @@
                 </div>
             </nav>
         </header>  
-        <div class="row justify-content-center mt-5 mb-5">
+        <div class="row justify-content-center mt-5 mb-5 content-page-load">
             <div class="col-sm-12 col-md-10 col-lg-8 mt-5 text-center">
                 <img id="profile_picture" class="rounded-circle" src="/img/profile_picture.jpg" alt="profile_picture">
             </div>

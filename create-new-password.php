@@ -29,7 +29,7 @@
                 </div>
             </nav>
         </header>
-        <div class="container-fluid mt-lg-5 mt-md-5 mt-5">
+        <div class="container-fluid mt-5 content-page-load">
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-12 col-md-8 col-lg-6">
                    <?php
@@ -40,7 +40,7 @@
                             ?>
                             <!--form new password create-->
                             <form id="reset_password_form" action="/includes/site.reset-password.php" method="POST">
-                                <h3 class="text-center text-info display-4">Enter your new password</h3>
+                                <p class="text-center text-info display-4">Enter your new password</p>
                                 <input type="hidden" name="selector" id="selector" value="<?php echo $selector ?>">
                                 <input type="hidden" name="validator" id="validator" value="<?php echo $validator ?>">
                                 <div class="form-group text-left">
@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group text-left">
-                                    <label for="Retype password" class="text-info">Retype password:</label>
+                                    <label for="password_retype" class="text-info">Retype password:</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>

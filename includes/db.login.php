@@ -93,6 +93,7 @@
         }
     }
 
+    //This function run query and set session for list of users if user is admin
     function setListUsers($db_connection, $stmt, $email_username, $sqlQuery) {
         if(!$stmt->prepare($sqlQuery)) {
             header("Location: /index.php?error=incorrectCredentials");

@@ -17,6 +17,7 @@
         <script defer src="/scripts/profile_list_script.js"></script>
         <script defer src="/scripts/logout_store_score.js"></script>
         <script defer src="/scripts/score_saver.js"></script>
+        <script src="/scripts/loading_page_fadein.js"></script>
     </head>
     <body>
         <header>
@@ -26,7 +27,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarResponsive">
                         <span id="drop-down-ico" class="navbar-toggler-icon"></span>
                     </button>
-                    <div id="navBarResponsive" class="collapse navbar-collapse">
+                    <div id="dropdown-list" id="navBarResponsive" class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
                                 <a class="nav-link" href="/home.php" onclick="saveScore()">Home<span class="sr-only">(current)</span></a>
@@ -50,7 +51,7 @@
                             <button class="btn btn-info btn-md" data-toggle="dropdown" role="button" id="login_btn_dropdown_list">
                                 <label>Profile</label>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-right">
+                            <div id="dropdown-list" class="dropdown-menu dropdown-menu-right">
                                 <!--Profile-->
                                 <ul class="list-group list-group-flush">
                                      <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -76,15 +77,17 @@
                     </div>
                 </div>
             </nav>
-        </header>  
-        <div class="row justify-content-center mt-5 mb-5">
-            <div class="col-sm-12 col-md-10 col-lg-8">
-                <h2 class="d-flex justify-content-center text-info">Hello <?php echo $_SESSION['Name']; ?>, let's play a game :)</h2>
-            </div>
-            <div id="gameScene" class="col-sm-12 col-md-10 col-lg-8">
-                <canvas id="game"></canvas>
-            </div>
-        </div>  
+        </header> 
+        <div class="container content-page-load">
+            <div class="row justify-content-center mt-5 mb-5">
+                <div class="col-sm-12 col-md-10 col-lg-8">
+                    <h2 class="d-flex justify-content-center text-info">Hello <?php echo $_SESSION['Name']; ?>, let's play a game :)</h2>
+                </div>
+                <div id="gameScene" class="col-sm-12 col-md-10 col-lg-8">
+                    <canvas id="game"></canvas>
+                </div>
+            </div> 
+        </div>
         <footer>
             <?php include("footer.php"); ?>
         </footer>

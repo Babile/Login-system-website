@@ -49,7 +49,7 @@
                             <button class="btn btn-info btn-md" data-toggle="dropdown" role="button" id="login_btn_dropdown_list">
                                 <label>Profile</label>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-right">
+                            <div id="dropdown-list" class="dropdown-menu dropdown-menu-right">
                                 <!--Profile-->
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -80,7 +80,7 @@
                 </div>
             </nav>
         </header>  
-        <div class="row justify-content-center mt-5 mb-5">
+        <div class="row justify-content-center mt-5 mb-5 content-page-loads">
             <div id="table" class="col-xs-12 col-sm-12 col-md-8 col-lg-10 table-responsive mt-3 w-auto">
                 <table class="table mb-5">
                     <thead class="thead-light">
@@ -90,6 +90,7 @@
                             <th scope="col">Surname</th>
                             <th scope="col">Email</th>
                             <th scope="col">Username</th>
+                            <th scope="col">Membership</th>
                             <th scope="col">Registration date</th>
                         </tr>
                     </thead>
@@ -99,15 +100,15 @@
                             $rows = $_SESSION['ListUsers'];
                             foreach($rows as $row) {
                                 echo '
-                                   <tr>
-                                       <th scope="row">'.$row['ID'].'</th>
-                                       <td>'.$row['username'].'</td>
-                                       <td>'.$row['email'].'</td>
-                                       <td>'.$row['name'].'</td>
-                                       <td>'.$row['surname'].'</td>
-                                       <td>'.$row['membership'].'</td>
-                                       <td>'.date('F j, Y,', strtotime($row['date'])).'</td>
-                                   </tr>';
+                                <tr>
+                                    <th scope="row">'.$row['ID'].'</th>
+                                    <td>'.$row['name'].'</td>
+                                    <td>'.$row['surname'].'</td>
+                                    <td>'.$row['email'].'</td>
+                                    <td>'.$row['username'].'</td>
+                                    <td>'.$row['membership'].'</td>
+                                    <td>'.date('F j, Y.', strtotime($row['date'])).'</td>
+                                </tr>';
                             }
                         }
                     ?>
