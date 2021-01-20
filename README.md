@@ -1,6 +1,6 @@
 # Login-system-website
 
-Simple login and register system, forgot password, handling email. Link to [here](https://nemanjababic.000webhostapp.com/index.php)
+Simple login and register system, forgot password, handling email. Link to [here](https://nemanjababic.infinityfreeapp.com/index.php)
 
 Technology used to create site: 
 * HTML
