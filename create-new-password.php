@@ -5,11 +5,11 @@
     $validator = $_GET['validator'];
 
     if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) {
-        header("Location: /home.php");
+        header("Location: home.php");
     }
 
     else if(empty($selector) || empty($validator)) {
-        header("Location: /index.php?error=invalidValidation");
+        header("Location: index.php?error=invalidValidation");
         exit();
     }
 ?>
@@ -25,7 +25,7 @@
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/index.php"> <img id="logo-pic" alt="logo" src="/img/web_site_logo.png"> Nemanja Babić</a>
+                    <a class="navbar-brand" href="index.php"> <img id="logo-pic" alt="logo" src="img/web_site_logo.png"> Nemanja Babić</a>
                 </div>
             </nav>
         </header>

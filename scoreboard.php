@@ -12,11 +12,8 @@
 <html>
     <head>
         <?php include("header.php"); ?>
-        <link rel="stylesheet" type="text/css" href="css/home_style.css">
         <script defer src="scripts/profile_list_script.js"></script>
         <script defer src="scripts/logout_store_score.js"></script>
-        <script defer src="scripts/score_saver.js"></script>
-        <script defer src="scripts/enable_disable_user.js"></script>
     </head>
     <body>
         <header>
@@ -29,24 +26,24 @@
                     <div id="navBarResponsive" class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.php" onclick="saveScore()">Home</a>
+                                <a class="nav-link" href="home.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about-me.php" onclick="saveScore()">About me</a>
+                                <a class="nav-link" href="about-me.php">About me</a>
                             </li>
                             <?php
                                 if(isset($_SESSION['Membership'])) {
                                     if($_SESSION['Membership'] == "Admin") {
                                         ?>
-                                            <li class="nav-item active">
-                                                <a class="nav-link" href="members.php" onclick="saveScore()">Members<span class="sr-only">(current)</span></a>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="members.php">Members</a>
                                             </li>
                                         <?php
                                     }
                                 }
                             ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="scoreboard.php">Scoreboard</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="scoreboard.php">Scoreboard<span class="sr-only">(current)</span></a>
                             </li>
                         </ul>
                         <div class="navbar-nav ml-auto">
@@ -83,69 +80,39 @@
                     </div>
                 </div>
             </nav>
-        </header>  
+        </header> 
         <div class="row justify-content-center mt-5 mb-5 content-page-loads">
-            <?php
-                if(isset($_GET['message'])) {
-                    if($_GET['message'] == 'successful') {
-                        echo '
-                            <div class="form-group text-center col-xs-12 col-sm-12 col-md-7 col-lg-7 mt-3">
-                                <div id="alert_msg" class="alert alert-success text-center" role="alert">
-                                <p>Successfully update user.</p>
-                                </div>
-                            </div>';
-                    }
-                }
-                else if(isset($_GET['error'])) {
-                    if($_GET['error'] == 'userNotFound') {
-                        echo '
-                            <div class="form-group text-center col-xs-12 col-sm-12 col-md-7 col-lg-7 mt-3"> 
-                                <div id="alert_msg" class="alert alert-danger text-center" role="alert">
-                                    <p>User not found.</p>
-                                </div>
-                            </div>';
-                    }
-                }
-            ?>
             <div id="table" class="col-xs-12 col-sm-12 col-md-8 col-lg-10 table-responsive mt-3 w-auto">
-                <table class="table mb-5">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Surname</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Username</th>
-                            <th scope="col">Membership</th>
-                            <th scope="col">Registration date</th>
-                            <th scope="col">Control</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                        if(isset($_SESSION['ListUsers'])) {
-                            $rows = $_SESSION['ListUsers'];
-                            foreach($rows as $row) {
-                                echo '
-                                <tr>
-                                    <th scope="row">'.$row['ID'].'</th>
-                                    <td>'.$row['name'].'</td>
-                                    <td>'.$row['surname'].'</td>
-                                    <td>'.$row['email'].'</td>
-                                    <td>'.$row['username'].'</td>
-                                    <td>'.$row['membership'].'</td>
-                                    <td>'.date('F j, Y.', strtotime($row['date'])).'</td>
-                                    '.($row['flag'] == 1 ? '<td><button type="button" onclick="checkFlag('.$row['ID'].')" class="btn btn-danger">Disable user</button></td>': '<td><button type="button" onclick="checkFlag('.$row['ID'].')" class="btn btn-success">Enable user</button></td>').'
-                                </tr>';
+                    <table class="table mb-5">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Username</th>
+                                <th scope="col" class="text-center">Score</th>
+                                <th scope="col" class="text-center">Scored date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                            if(isset($_SESSION['HighScoreList'])) {
+                                $rows = $_SESSION['HighScoreList'];
+                                foreach($rows as $row) {
+                                    echo '
+                                    <tr>
+                                        <td>'.$row['username'].'</td>
+                                        <td class="text-center">'.$row['score'].'</td>
+                                        <td class="text-center">'.date('F j, Y.', strtotime($row['date'])).'</td>
+                                    </tr>';
+                                }
                             }
-                        }
-                    ?>
-                    </tbody>
-                </table>
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>  
+        </div>
         <footer>
             <?php include("footer.php"); ?>
         </footer>
     </body>
 </html>
+

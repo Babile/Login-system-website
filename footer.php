@@ -1,22 +1,22 @@
 <nav id="buttumNavBar" class="navbar justify-content-center navbar-expand-sm fixed-bottom navbar-dark bg-dark">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="https://www.github.com" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+            <a class="nav-link" href="https://www.github.com" target="_blank"><i class="fa fa-github fa-lg test"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
+            <a class="nav-link" href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-lg test"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+            <a class="nav-link" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg test"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+            <a class="nav-link" href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram fa-lg test"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+            <a class="nav-link" href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-lg test"></i></a>
         </li> 
         <li class="nav-item">
-            <a class="nav-link" href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+            <a class="nav-link" href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube fa-lg test"></i></a>
         </li>
     </ul>
 </nav>

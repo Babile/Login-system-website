@@ -1,7 +1,7 @@
 <?php 
     if(isset($_GET['message'])) {
         if($_GET['message'] == 'registrationSuccessful') {
-            header("Refresh: 2; url=/index.php");
+            header("Refresh: 2; url=login.php");
         }
     } 
 ?>
@@ -17,8 +17,8 @@
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="/index.php"> <img id="logo-pic" alt="logo" src="/img/web_site_logo.png"> Nemanja Babić</a>
-                </div> 
+                  <a class="navbar-brand" href="index.php"> <img id="logo-pic" alt="logo" src="img/web_site_logo.png"> Nemanja Babić</a>
+                </div>
             </nav>
         </header>
         <div class="container-fluid content-page-load">
@@ -50,8 +50,8 @@
                 ?>
                 <div class="col-sm-12 col-md-8 col-lg-6 mb-5">
                     <!--form register-->
-                    <form id="register_form" action="/includes/db.register.php" method="POST">
-                        <p class="text-center text-info display-4">Register</p>
+                    <form id="register_form" action="includes/db.register.php" method="POST">
+                        <p class="text-center text-info display-4">Sign up</p>
                         <div class="form-group">
                             <label for="name" class="text-info">Name:</label>
                             <div class="input-group">
@@ -106,10 +106,10 @@
                                 <input type="password" name="password_retype" id="password_retype" class="form-control" placeholder="Retype password" autofocus required>
                             </div>
                         </div>
-                        <button type="submit" name="register_btn" id="register_btn" class="btn btn-info btn-md">Register</button>
+                        <button type="submit" name="register_btn" id="register_btn" class="btn btn-info btn-md">Create Account</button>
                     </form>
                     <br>
-                    <p>Already have account? <a href="/index.php">Login</a></p>
+                    <p>Already have account? <a href="sign-in.php">Sign in</a></p>
                 </div>
             </div>   
         </div>

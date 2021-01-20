@@ -16,7 +16,7 @@
 
             //Checking is email valid
             if(!filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
-                header("Location: /reset-password.php?error=invalidEmail");
+                header("Location: ../reset-password.php?error=invalidEmail");
                 exit();
             }
 
@@ -25,7 +25,7 @@
             $stmt = $db_connection->stmt_init();
 
             if(!$stmt->prepare($sqlQuery)) {
-                header("Location: /index.php?error=invalidEmail");
+                header("Location: ../sign-in.php?error=invalidEmail");
                 $db_connection->close();
                 exit();
             }
@@ -34,7 +34,7 @@
                 $stmt->execute();
 
                 if(!$stmt->fetch()) {
-                    header("Location: /index.php?error=emailIsNotValid");
+                    header("Location: ../sign-in.php?error=emailIsNotValid");
                     $stmt->free_result();
                     $db_connection->close();
                     exit();
@@ -48,7 +48,7 @@
             if(!$stmt->prepare($sqlQuery)) {
                 $stmt->free_result();
                 $db_connection->close();
-                header("Location: /reset-password.php?error=serverError");
+                header("Location: ../reset-password.php?error=serverError");
                 exit();
             }
             else {
@@ -64,7 +64,7 @@
             if(!$stmt->prepare($sqlQuery)) {
                 $stmt->free_result();
                 $db_connection->close();
-                header("Location: /reset-password.php?error=serverError");
+                header("Location: ../reset-password.php?error=serverError");
                 exit();
             }
             else {
@@ -81,19 +81,19 @@
                 <p>We recieved a password reset request. The link to reset your password is below. If you did not make this request, you can ignore this email.</p>
                 <p>Here is your password reset link: <a href="'.$url.'">Click here</a></p> ';
             //Setting header if email is not sent
-            $header = "Location: /reset-password.php?error=SendingEmail";
+            $header = "Location: ../reset-password.php?error=SendingEmail";
             //Setting subject of email
             $subject = 'Reset password request';
 
             sendEmail($userEmail, $subject, $emailBody, $header);
 
-            header("Location: /reset-password.php?message=passwordRequestSuccessful");
+            header("Location: ../reset-password.php?message=passwordRequestSuccessful");
         }
         catch(Exception $e) {
-            header("Location: /reset-password.php?error=fatalError&".$e->getMessage());
+            header("Location: ../reset-password.php?error=fatalError&".$e->getMessage());
 		}
     }
     else {
-        header("Location: /reset-password.php");
+        header("Location: ../reset-password.php");
     }
 ?>

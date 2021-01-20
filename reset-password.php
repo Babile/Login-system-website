@@ -2,12 +2,12 @@
     session_start();
 
     if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) {
-        header("Location: /home.php");
+        header("Location: home.php");
     }
 
     else if(isset($_GET['message'])) {
         if($_GET['message'] == 'passwordResetSuccessful') {
-            header("Refresh: 3; url=/index.php");
+            header("Refresh: 3; url=index.php");
         }
     }
 ?>
@@ -23,7 +23,7 @@
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/index.php"> <img id="logo-pic" alt="logo" src="/img/web_site_logo.png"> Nemanja Babić</a>
+                    <a class="navbar-brand" href="index.php"> <img id="logo-pic" alt="logo" src="img/web_site_logo.png"> Nemanja Babić</a>
                 </div>
             </nav>
         </header>
@@ -31,7 +31,7 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-12 col-md-8 col-lg-6 mb-5">
                     <!--form password reset-->
-                    <form id="password_recovery_form" action="/includes/site.reset-password-request.php" method="POST">
+                    <form id="password_recovery_form" action="includes/site.reset-password-request.php" method="POST">
                         <p class="text-center text-info display-4">Reset your password</p>
                         <div class="form-group">
                             <label for="email" class="text-info">Enter your Email:</label>

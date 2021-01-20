@@ -14,7 +14,7 @@
     
         if(!$stmt->prepare($sqlQuery)) {
             clear();
-            header("Location: /index.php?error=failedToStoreScore");
+            header("Location: ../sign-in.php?error=failedToStoreScore");
             $db_connection->close();
             exit();
         }
@@ -32,7 +32,7 @@
             
                 if(!$stmt->prepare($sqlQuery)) {
                     clear();
-                    header("Location: /index.php?error=failedToStoreScore");
+                    header("Location: ../sign-in.php?error=failedToStoreScore");
                     $db_connection->close();
                     exit();
                 }
@@ -41,14 +41,14 @@
                 
                     if(!$stmt->execute()) {
                         clear();
-                        header("Location: /index.php?error=failedToStoreScore");
+                        header("Location: ../sign-in.php?error=failedToStoreScore");
                         $stmt->free_result();
                         $db_connection->close();
                         exit();
                     }
                     else {
                         clear();
-                        header("Location: /index.php");
+                        header("Location: ../sign-in.php");
                     }
                 }
             }
@@ -60,7 +60,7 @@
                 
                     if(!$stmt->prepare($sqlQuery)) {
                         clear();
-                        header("Location: /index.php?error=failedToStoreScore");
+                        header("Location: ../sign-in.php?error=failedToStoreScore");
                         $stmt->free_result();
                         $db_connection->close();
                         exit();
@@ -70,27 +70,27 @@
                     
                         if (!$stmt->execute()) {
                             clear();
-                            header("Location: /index.php?error=failedToStoreScore");
+                            header("Location: ../sign-in.php?error=failedToStoreScore");
                             $stmt->free_result();
                             $db_connection->close();
                             exit();
                         }
                         else {
                             clear();
-                            header("Location: /index.php");
+                            header("Location: ../sign-in.php");
                         }
                     }
                 }
                 else {
                     clear();
-                    header("Location: /index.php");
+                    header("Location: ../sign-in.php");
                 }
             }
         }
     }
     catch(Exception $e) {
         clear();
-        header("Location: /index.php?error=failedToStoreScore".$e->getMessage());
+        header("Location: ../sign-in.php?error=failedToStoreScore".$e->getMessage());
     }
     //Cleaning session and redirecting to index page
     function clear() {

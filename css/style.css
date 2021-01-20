@@ -46,15 +46,34 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
 }
 
 .content-page-load{
-     animation: fade 1.3s;
+    animation: fadein 0.5s ease-in-out;
 }
 
-@keyframes fade {
+.content-page-load2{
+    animation: fadeout 0.5s ease-in-out;
+}
+
+@keyframes fadein {
+   from {
+       opacity: 0;
+   }
+   to {
+       opacity: 1;
+   }
+}
+
+@keyframes fadeout {
     from {
-        opacity: 0;
+        opacity: 1;
     }
     to {
-        opacity: 1;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 336px) {
+    .test {
+        font-size: 5vw;
     }
 }
 

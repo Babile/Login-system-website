@@ -11,7 +11,7 @@
 
         //Checking if selector and validator are not null and password is same as password_retype
         if((!empty($selector) || !empty($validator)) || ($password !== $password_retype)) {
-            header("Location: /index.php?error=newPasswordEmpty");
+            header("Location: ../sign-in.php?error=newPasswordEmpty");
             exit();
         }
     
@@ -28,7 +28,7 @@
             $stmt = $db_connection->stmt_init();
 
             if(!$stmt->prepare($sqlQuery)) {
-                header("Location: /index.php?error=incorrectCredentials");
+                header("Location: ../sign-in.php?error=incorrectCredentials");
                 $db_connection->close();
                 exit();
             }
@@ -41,7 +41,7 @@
                 $stmt->bind_result($tokenEmail, $passwordResetToken);
 
                 if(!$stmt->fetch()) {
-                    header("Location: /index.php?error=failedToGetPassword");
+                    header("Location: ../sign-in.php?error=failedToGetPassword");
                     $stmt->free_result();
                     $db_connection->close();
                     exit();
@@ -52,7 +52,7 @@
                     $tokenCheck = password_verify($tokenBin, $passwordResetToken);
 
                     if(!$tokenCheck) {
-                        header("Location: /index.php?error=invalidToken");
+                        header("Location: ../sign-in.php?error=invalidToken");
                         $stmt->free_result();
                         $db_connection->close();
                         exit();
@@ -63,7 +63,7 @@
                         $stmt = $db_connection->stmt_init();
 
                         if(!$stmt->prepare($sqlQuery)) {
-                            header("Location: /index.php?error=invalidEmail");
+                            header("Location: ../sign-in.php?error=invalidEmail");
                             $stmt->free_result();
                             $db_connection->close();
                             exit();
@@ -74,7 +74,7 @@
                             $stmt->bind_result($tokenEmail);
 
                             if(!$stmt->fetch()) {
-                                header("Location: /index.php?error=invalidEmail");
+                                header("Location: ../sign-in.php?error=invalidEmail");
                                 $stmt->free_result();
                                 $db_connection->close();
                                 exit();
@@ -85,7 +85,7 @@
                                 $stmt = $db_connection->stmt_init();
 
                                 if(!$stmt->prepare($sqlQuery)) {
-                                    header("Location: /index.php?error=faildToSetPassword");
+                                    header("Location: ../sign-in.php?error=faildToSetPassword");
                                     $stmt->free_result();
                                     $db_connection->close();
                                     exit();
@@ -98,7 +98,7 @@
                                 $stmt = $db_connection->stmt_init();
 
                                 if(!$stmt->prepare($sqlQuery)) {
-                                    header("Location: /index.php?error=fatalError");
+                                    header("Location: ../sign-in.php?error=fatalError");
                                     $stmt->free_result();
                                     $db_connection->close();
                                     exit();
@@ -106,7 +106,7 @@
                                 else {
                                     $stmt->bind_param('s', $tokenEmail);
                                     $stmt->execute();
-                                    header("Location: /index.php?message=passwordUpdated");
+                                    header("Location: ../sign-in.php?message=passwordUpdated");
                                 }
                             }
                         }
@@ -122,17 +122,17 @@
             //Setting email message
             $emailBody = '<p>Your password has been successfully changed.</p>';
             //Setting header if email is not sent
-            $header = "Location: /index.php?message=passwordUpdated";
+            $header = "Location: ../sign-in.php?message=passwordUpdated";
             //Setting subject of email
             $subject = 'Password reset successful';
         
             sendEmail($userEmail, $subject, $emailBody, $header);
         }
         catch(Exception $e) {
-            header("Location: /index.php?error=fatalError&".$e->getMessage());
+            header("Location: ../sign-in.php?error=fatalError&".$e->getMessage());
         }
     }
     else {
-        header("Location: /index.php");
+        header("Location: ../sign-in.php");
     }
 ?>

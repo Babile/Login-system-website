@@ -11,7 +11,7 @@
         $sqlQuery = "SELECT score FROM player_score WHERE ID = ?";
 
         if(!$stmt->prepare($sqlQuery)) {
-            header("Location: /index.php?error=incorrectCredentials");
+            header("Location: ../sign-in.php?error=incorrectCredentials");
             $db_connection->close();
             exit();
         }
@@ -25,16 +25,15 @@
             if(!$stmt->fetch()) {
                 $stmt->free_result();
                 $db_connection->close();
-                header("Location: /home.php");
+                header("Location: ../home.php");
                 exit();
             }
             else {
-                //>
                 $stmt->free_result();
                 $db_connection->close();
                 echo '<script>
                         localStorage.setItem("highScoreStore", '.$playerScore.');
-                        location.href = "/home.php";
+                        location.href = "../home.php";
                      </script>';
                 exit();
             }
@@ -45,6 +44,6 @@
         $db_connection->close();
     }
     catch(Exception $e) {
-        header("Location: /index.php?error=incorrectCredentials".$e->getMessage());
+        header("Location: ../sign-in.php?error=incorrectCredentials".$e->getMessage());
     }
 ?>

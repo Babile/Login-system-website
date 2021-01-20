@@ -20,7 +20,7 @@
                  $stmt = $db_connection->stmt_init();
 
                  if(!$stmt->prepare($sqlQuery)) {
-                     header("Location: /register.php?error=registrationFailed&Name=".$name."&Surname=".$surname."&Username=".$username."&Email=".$email);
+                     header("Location: ../register.php?error=registrationFailed&Name=".$name."&Surname=".$surname."&Username=".$username."&Email=".$email);
                      $db_connection->close();
                      exit();
                  }
@@ -28,28 +28,28 @@
                      $stmt->bind_param('sssss', $name,$surname, $username, $email, $password);
 
                      if(!$stmt->execute()) {
-                         header("Location: /register.php?error=registrationFailed&Name=".$name."&Surname=".$surname."&Username=".$username."&Email=".$email);
+                         header("Location: ../register.php?error=registrationFailed&Name=".$name."&Surname=".$surname."&Username=".$username."&Email=".$email);
                          $stmt->free_result();
                          $db_connection->close();
                          exit();
                      }
                      else {
-                         header("Location: /register.php?message=registrationSuccessful");
+                         header("Location: ../register.php?message=registrationSuccessful");
                      }
                  }
 			 }
 			 else {
-				 header("Location: /register.php?error=registrationFailed&Name=".$name."&Surname=".$surname."&Username=".$username."&Email=".$email);
+				 header("Location: ../register.php?error=registrationFailed&Name=".$name."&Surname=".$surname."&Username=".$username."&Email=".$email);
 			 }
              //Closing connection to database and free memory
              $stmt->free_result();
              $db_connection->close();
 		 }
 		 catch(Exception $e) {
-             header("Location: /index.php?error=incorrectCredentials".$e->getMessage());
+             header("Location: ../sign-in.php?error=incorrectCredentials".$e->getMessage());
 		 }
 	 }
 	 else {
-		 header("Location: /register.php");
+		 header("Location: ../register.php");
 	 }
 ?>
