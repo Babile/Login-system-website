@@ -24,7 +24,7 @@
             global $db_connection;
 
             //Checking if url information match in database and if current date is not past date of expire to reset password
-            $sqlQuery = "SELECT email, passwordResetToken FROM passwordReset WHERE passwordResetSelector = ? AND timeExpires >= ?";
+            $sqlQuery = "SELECT email, passwordResetToken FROM passwordreset WHERE passwordResetSelector = ? AND timeExpires >= ?";
             $stmt = $db_connection->stmt_init();
 
             if(!$stmt->prepare($sqlQuery)) {
@@ -94,7 +94,7 @@
                                 $stmt->bind_param('ss', $password, $tokenEmail);
                                 $stmt->execute();
                                 //Deleting request for password reset
-                                $sqlQuery = "DELETE FROM passwordReset WHERE email = ?";
+                                $sqlQuery = "DELETE FROM passwordreset WHERE email = ?";
                                 $stmt = $db_connection->stmt_init();
 
                                 if(!$stmt->prepare($sqlQuery)) {

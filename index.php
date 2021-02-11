@@ -13,7 +13,7 @@
     <head>
         <?php include("header.php"); ?>
         <link rel="stylesheet" type="text/css" href="css/home_style.css">
-        <script defer src="scripts/endless_runner_game.js"></script>
+        <?php include("game-scripts.php"); ?>
         <script defer src="scripts/score_saver.js"></script>
     </head>
     <body>
@@ -47,18 +47,10 @@
                 </div>
             </nav>
         </header> 
-        <div class="container content-page-load">
+        <div class="container content-page-load-fadein">
             <div class="row justify-content-center mt-5 mb-5">
                 <div class="col-sm-12 col-md-10 col-lg-8">
-                    <h2 class="d-flex justify-content-center text-info">Hello 
-                    <?php 
-                        if(isset($_SESSION['Name'])){
-                            echo $_SESSION['Name'];
-                        } 
-                        else {
-                            echo "Guest";
-                        }
-                    ?>, let's play a game :)</h2>
+                    <h2 class="d-flex justify-content-center text-info">Hello Guest, let's play a game :)</h2>
                 </div>
                 <div id="gameScene" class="col-sm-12 col-md-10 col-lg-8">
                     <canvas id="game"></canvas>

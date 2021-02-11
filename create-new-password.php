@@ -29,7 +29,7 @@
                 </div>
             </nav>
         </header>
-        <div class="container-fluid mt-5 content-page-load">
+        <div class="container-fluid mt-5 mb-5 content-page-load-fadein">
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-12 col-md-8 col-lg-6">
                    <?php

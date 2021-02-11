@@ -12,8 +12,10 @@
 <html>
     <head>
         <?php include("header.php"); ?>
+        <script defer src="scripts/scroll_button_go_top.js"></script>
     </head>
     <body>
+        <button id="btnGoTop" title="Go to top"><i class="fa fa-arrow-up fa-2x"></i></button>
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="container-fluid">
@@ -21,7 +23,7 @@
                 </div>
             </nav>
         </header>
-        <div class="container-fluid content-page-load">
+        <div class="container-fluid content-page-load-fadein">
           <div class="row justify-content-center mt-5 mb-5">
                 <?php 
                     if(isset($_GET['error'])) {
@@ -109,7 +111,7 @@
                         <button type="submit" name="register_btn" id="register_btn" class="btn btn-info btn-md">Create Account</button>
                     </form>
                     <br>
-                    <p>Already have account? <a href="sign-in.php">Sign in</a></p>
+                    <p class="link-info">Already have account? <a href="sign-in.php">Sign in</a></p>
                 </div>
             </div>   
         </div>

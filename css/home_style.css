@@ -3,6 +3,13 @@
     height: 100%;
     box-shadow: 0 30px 40px rgba(0,0,0,.5);
     border-radius: 10px;
+	font-family: GameFont;
+	background-color: #F5F5F5;
+}
+
+@font-face {
+    font-family: GameFont;
+    src: url("../fonts/PressStart2P-Regular.ttf");
 }
 
 #table {

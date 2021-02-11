@@ -7,7 +7,7 @@
         $tokenExpireTime = date('U') + 3600;
         $userEmail = $_POST['email'];
     
-        $url = "https://nemanjababic.000webhostapp.com/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
+        $url = "https://nemanjababic.infinityfreeapp.com/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
     
         try{
             //Connecting to database
@@ -42,7 +42,7 @@
             }
 
             //Deleting old password reset request if exist
-            $sqlQuery = "DELETE FROM passwordReset WHERE email = ?";
+            $sqlQuery = "DELETE FROM passwordreset WHERE email = ?";
             $stmt = $db_connection->stmt_init();
         
             if(!$stmt->prepare($sqlQuery)) {
@@ -57,7 +57,7 @@
             }
 
             //Inserting new password request to database
-            $sqlQuery = "INSERT INTO passwordReset (email, passwordResetSelector, passwordResetToken, timeExpires) VALUES(?, ?, ?, ?)";
+            $sqlQuery = "INSERT INTO passwordreset (email, passwordResetSelector, passwordResetToken, timeExpires) VALUES(?, ?, ?, ?)";
         
             $stmt = $db_connection->stmt_init();
         

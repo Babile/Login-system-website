@@ -2,6 +2,11 @@
     //Getting ID and flag form user
     $IDUser = $_GET['ID'];
 
+    if($IDUser == null){
+        header("Location: /members.php?error=userNotFound");
+        exit();
+    }
+
     try{
         //Connecting to database
         require 'db.connection.php';
@@ -43,7 +48,7 @@
         }
     }
     catch(Exception $e) {
-        header("Location: ../sign-in.php?error=userBlocked".$e->getMessage());
+        header("Location: ../members.php?error=userBlocked".$e->getMessage());
     }
     //This function run query
     function runQuery($db_connection, $stmt, $sqlQuery, $userID, $userFlag){

@@ -11,30 +11,31 @@
         <link rel="stylesheet" type="text/css" href="css/home_style.css">
         <script defer src="scripts/profile_list_script.js"></script>
         <script defer src="scripts/logout_store_score.js"></script>
-        <script defer src="scripts/score_saver.js"></script>
+        <script defer src="scripts/scroll_button_go_top.js"></script>
     </head>
     <body>
+        <button id="btnGoTop" title="Go to top"><i class="fa fa-arrow-up fa-2x"></i></button>
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href= <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { echo "home.php"; } else { echo "index.php"; } ?>> <img id="logo-pic" alt="logo" src="img/web_site_logo.png" onclick="saveScore()"> Nemanja Babić</a>
+                    <a class="navbar-brand" href= <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { echo "home.php"; } else { echo "index.php"; } ?>> <img id="logo-pic" alt="logo" src="img/web_site_logo.png"> Nemanja Babić</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarResponsive">
                         <span id="drop-down-ico" class="navbar-toggler-icon"></span>
                     </button>
                     <div id="navBarResponsive" class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href= <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { echo "home.php"; } else { echo "index.php"; } ?> <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { echo 'onclick="saveScore()"'; } ?>>Home</a>
+                                <a class="nav-link" href= <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { echo "home.php"; } else { echo "index.php"; } ?>>Home</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="about-me.php" <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { echo 'onclick="saveScore()"'; } ?>>About me<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="about-me.php">About me<span class="sr-only">(current)</span></a>
                             </li>
                             <?php
                                 if(isset($_SESSION['Membership'])) {
                                     if($_SESSION['Membership'] == "Admin") {
                                         ?>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="members.php" <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { echo 'onclick="saveScore()"'; } ?>>Members</a>
+                                                <a class="nav-link" href="members.php">Members</a>
                                             </li>
                                         <?php
                                     }
@@ -42,7 +43,7 @@
                             ?>
                             <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="scoreboard.php" onclick="saveScore()">Scoreboard</a>
+                                <a class="nav-link" href="scoreboard.php">Scoreboard</a>
                             </li>
                             <?php } ?>
                         </ul>
@@ -95,13 +96,13 @@
                 </div>
             </nav>
         </header>  
-        <div class="row justify-content-center mt-5 mb-5 content-page-load">
+        <div class="row justify-content-center mt-5 mb-5 content-page-load-fadein">
             <div class="col-sm-12 col-md-10 col-lg-8 mt-5 text-center">
                 <img id="profile_picture" class="rounded-circle" src="img/profile_picture.jpg" alt="profile_picture">
             </div>
             <div class="col-sm-12 col-md-10 col-lg-8 text-center">
                 <h3 class="text-info">Hello I'm Nemanja Babić</h3>
-                <h3 class="text-info">I'm 24 years old and final year student at <br>Electrical and Computer Engineering of Applied Studies in Belgrade <i>New computer technology department</i></h3>
+                <h3 class="text-info">I'm 24 years old and final year student at <br>Electrical and Computer Engineering of Applied Studies in Belgrade <br><i>New computer technology department</i></h3>
             </div>
             <div class="col-sm-12 col-md-10 col-lg-8 text-center">
                 <h4 class="text-info">Technology used to create site</h4>
@@ -170,9 +171,9 @@
             ?>
             <div class="col-sm-12 col-md-10 col-lg-8 mb-5 text-center">
                 <h3 class="text-info">Contact me</h3>
-                <form action="https://submit-form.com/NXfKEX2W" target="_self" method="POST">
-                    <input type="hidden" name="_redirect" value="https://nemanjababic.000webhostapp.com/about-me.php?message=successful"/>
-                    <input type="hidden" name="_error" value="https://nemanjababic.000webhostapp.com/about-me.php?error=failedToSendEmail"/>
+                <form action="https://submit-form.com/example" target="_self" method="POST">
+                    <input type="hidden" name="_redirect" value="https://nemanjababic.infinityfreeapp.com/about-me.php?message=successful"/>
+                    <input type="hidden" name="_error" value="https://nemanjababic.infinityfreeapp.com/about-me.php?error=failedToSendEmail"/>
                     <div class="form-group">
                         <label for="name" class="text-info pull-left">Name:</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
@@ -192,7 +193,7 @@
                     <button type="submit" name="sent_msg" class="btn btn-info btn-md"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Send</button>
                 </form>
             </div>
-        </div>  
+        </div>
         <footer>
             <?php include("footer.php"); ?>
         </footer>

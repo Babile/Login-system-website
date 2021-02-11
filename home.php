@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION['UserName']) || !isset($_SESSION['Email']) || !isset($_SESSION['Password'])) {
-        header("Location: /index.php");
+        header("Location: /sign-in.php");
     }
 ?>
 
@@ -13,7 +13,7 @@
     <head>
         <?php include("header.php"); ?>
         <link rel="stylesheet" type="text/css" href="css/home_style.css">
-        <script defer src="scripts/endless_runner_game.js"></script>
+        <?php include("game-scripts.php"); ?>
         <script defer src="scripts/profile_list_script.js"></script>
         <script defer src="scripts/logout_store_score.js"></script>
         <script defer src="scripts/score_saver.js"></script>
@@ -84,7 +84,7 @@
                 </div>
             </nav>
         </header> 
-        <div class="container content-page-load">
+        <div class="container content-page-load-fadein">
             <div class="row justify-content-center mt-5 mb-5">
                 <div class="col-sm-12 col-md-10 col-lg-8">
                     <h2 class="d-flex justify-content-center text-info">Hello <?php echo $_SESSION['Name']; ?>, let's play a game :)</h2>

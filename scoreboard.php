@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION['UserName']) || !isset($_SESSION['Email']) || !isset($_SESSION['Password'])) {
-        header("Location: index.php");
+        header("Location: sign-in.php");
     }
 ?>
 
@@ -14,8 +14,10 @@
         <?php include("header.php"); ?>
         <script defer src="scripts/profile_list_script.js"></script>
         <script defer src="scripts/logout_store_score.js"></script>
+        <script defer src="scripts/scroll_button_go_top.js"></script>
     </head>
     <body>
+        <button id="btnGoTop" title="Go to top"><i class="fa fa-arrow-up fa-2x"></i></button>
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="container-fluid">
@@ -81,7 +83,7 @@
                 </div>
             </nav>
         </header> 
-        <div class="row justify-content-center mt-5 mb-5 content-page-loads">
+        <div class="row justify-content-center mt-5 mb-5 content-page-load-fadein">
             <div id="table" class="col-xs-12 col-sm-12 col-md-8 col-lg-10 table-responsive mt-3 w-auto">
                     <table class="table mb-5">
                         <thead class="thead-light">

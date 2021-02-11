@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION['UserName']) || !isset($_SESSION['Email']) || !isset($_SESSION['Password'])) {
-        header("Location: index.php");
+        header("Location: sign-in.php");
     }
 ?>
 
@@ -17,8 +17,10 @@
         <script defer src="scripts/logout_store_score.js"></script>
         <script defer src="scripts/score_saver.js"></script>
         <script defer src="scripts/enable_disable_user.js"></script>
+        <script defer src="scripts/scroll_button_go_top.js"></script>
     </head>
     <body>
+        <button id="btnGoTop" title="Go to top"><i class="fa fa-arrow-up fa-2x"></i></button>
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="container-fluid">
@@ -84,7 +86,7 @@
                 </div>
             </nav>
         </header>  
-        <div class="row justify-content-center mt-5 mb-5 content-page-loads">
+        <div class="row justify-content-center mt-5 mb-5 content-page-load-fadein">
             <?php
                 if(isset($_GET['message'])) {
                     if($_GET['message'] == 'successful') {
@@ -102,6 +104,14 @@
                             <div class="form-group text-center col-xs-12 col-sm-12 col-md-7 col-lg-7 mt-3"> 
                                 <div id="alert_msg" class="alert alert-danger text-center" role="alert">
                                     <p>User not found.</p>
+                                </div>
+                            </div>';
+                    }
+                    else if($_GET['error'] == 'userBlocked'){
+                        echo '
+                            <div class="form-group text-center col-sm-12 col-md-7 col-lg-7 mt-3"> 
+                                <div id="alert_msg" class="alert alert-danger text-center" role="alert">
+                                    <p>User is blocked from administrator of site. Contact administrator to revoke rule</p>
                                 </div>
                             </div>';
                     }
