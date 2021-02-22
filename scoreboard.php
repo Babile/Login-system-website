@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
     <head>
         <?php include("header.php"); ?>
         <script defer src="scripts/profile_list_script.js"></script>
@@ -45,7 +45,7 @@
                                 }
                             ?>
                             <li class="nav-item active">
-                                <a class="nav-link" href="scoreboard.php">Scoreboard<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="scoreboard.php">Score board<span class="sr-only">(current)</span></a>
                             </li>
                         </ul>
                         <div class="navbar-nav ml-auto">
@@ -117,4 +117,3 @@
         </footer>
     </body>
 </html>
-

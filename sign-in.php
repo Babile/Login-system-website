@@ -9,9 +9,10 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
     <head>
         <?php include("header.php"); ?>
+        <script defer src="scripts/show_password_script.js"></script>
     </head>
     <body>
         <header>
@@ -138,10 +139,14 @@
                                 <input type="password" name="password" id="password" class="form-control" autofocus required>
                             </div>
                         </div>
-                        <div id="forgot_password_link" class="text-left">
+                        <div>
+                            <input type="checkbox" id="showPassword" name="showPassword" onclick="showPasswordFunc()"> 
+                            <label for="showPassword" class="text-info">Show Password</label>
+                        </div>
+                        <div id="forgot_password_link" class="text-left form-group">
                             <a href="reset-password.php" class="text-info">Forgot password?</a>
                         </div>
-                        <div class="form-group"><br>
+                        <div class="form-group">
                             <button type="submit" name="login_btn" id="login_btn" class="btn btn-info btn-md button_load">Sign in</button>
                         </div>
                     </form>

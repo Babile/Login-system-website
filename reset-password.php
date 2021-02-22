@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
     <head>
         <?php include("header.php"); ?>
     </head>
@@ -69,7 +69,7 @@
                                     echo '
                                         <div class="form-group text-center">
                                             <div id="alert_msg" class="alert alert-danger text-center" role="alert">
-                                                <p>invalid email address. Please check for misspelling mistakes and fill field again.</p>
+                                                <p>Invalid email address. Please check for misspelling mistakes and fill field again.</p>
                                             </div>
                                         </div>';
                                 }
@@ -100,4 +100,3 @@
         </footer>
     </body>
 </html>
-

@@ -2,10 +2,10 @@ window.onscroll = function(ev) {
     var mybutton = document.getElementById("btnGoTop");
     
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        $("#btnGoTop").fadeIn("slow");
     } 
     else {
-        mybutton.style.display = "none";
+        $("#btnGoTop").fadeOut("slow");
     }
 };
 

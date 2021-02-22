@@ -17,9 +17,10 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
     <head>
         <?php include("header.php"); ?>
+        <script defer src="scripts/show_password_script.js"></script>
     </head>
     <body>
         <header>
@@ -61,6 +62,10 @@
                                         <input type="password" name="password_retype" id="password_retype" class="form-control" placeholder="Retype password" autofocus  autofocus required>
                                     </div>
                                 </div>
+                                <div>
+                                    <input type="checkbox" id="showPassword" name="showPassword" onclick="showPasswordsFunc()"> 
+                                    <label for="showPassword">Show Passwords</label>
+                                </div>
                                 <div class="form-group text-left">
                                     <button type="submit" name="reset_password_btn" id="reset_password_btn" class="btn btn-info btn-md">Reset password</button>
                                 </div>
@@ -76,4 +81,3 @@
         </footer>
     </body>
 </html>
-

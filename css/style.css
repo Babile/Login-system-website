@@ -37,12 +37,12 @@
     outline: none;
     border-radius: 50%;
     right: 30px;
-    bottom: 100px;
+    bottom: 80px;
     z-index: 99;
 }
 
 #btnGoTop:active {
-    background-color: #cc22;
+    background-color: #C0C0C0;
 }
 
 body {

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
     <head>
         <?php include("header.php"); ?>
         <link rel="stylesheet" type="text/css" href="css/home_style.css">
@@ -48,7 +48,7 @@
                                 }
                             ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="scoreboard.php">Scoreboard</a>
+                                <a class="nav-link" href="scoreboard.php">Score board</a>
                             </li>
                         </ul>
                         <div class="navbar-nav ml-auto">

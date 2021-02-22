@@ -9,12 +9,13 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
     <head>
         <?php include("header.php"); ?>
         <script defer src="scripts/scroll_button_go_top.js"></script>
+        <script defer src="scripts/show_password_script.js"></script>
     </head>
-    <body>
+    <body lang="en">
         <button id="btnGoTop" title="Go to top"><i class="fa fa-arrow-up fa-2x"></i></button>
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
@@ -107,6 +108,10 @@
                                 </div>
                                 <input type="password" name="password_retype" id="password_retype" class="form-control" placeholder="Retype password" autofocus required>
                             </div>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="showPassword" name="showPassword" onclick="showPasswordsFunc()"> 
+                            <label for="showPassword">Show Passwords</label>
                         </div>
                         <button type="submit" name="register_btn" id="register_btn" class="btn btn-info btn-md">Create Account</button>
                     </form>

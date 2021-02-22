@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
     <head>
         <?php include("header.php"); ?>
         <link rel="stylesheet" type="text/css" href="css/home_style.css">
@@ -43,7 +43,7 @@
                             ?>
                             <?php if(isset($_SESSION['UserName']) || isset($_SESSION['Email']) || isset($_SESSION['Password'])) { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="scoreboard.php">Scoreboard</a>
+                                <a class="nav-link" href="scoreboard.php">Score board</a>
                             </li>
                             <?php } ?>
                         </ul>
@@ -199,4 +199,3 @@
         </footer>
     </body>
 </html>
-

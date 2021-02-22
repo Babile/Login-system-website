@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
     <head>
         <?php include("header.php"); ?>
         <link rel="stylesheet" type="text/css" href="css/home_style.css">
@@ -99,4 +99,3 @@
         </footer>
     </body>
 </html>
-
